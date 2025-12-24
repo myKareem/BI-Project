@@ -1,0 +1,932 @@
+{
+    "0": [
+        "job-10a.hg",
+        44,
+        7
+    ],
+    "1": [
+        "job-11a.hg",
+        40,
+        8
+    ],
+    "2": [
+        "job-12a.hg",
+        42,
+        8
+    ],
+    "3": [
+        "job-13a.hg",
+        44,
+        9
+    ],
+    "4": [
+        "job-14a.hg",
+        36,
+        8
+    ],
+    "5": [
+        "job-15a.hg",
+        53,
+        9
+    ],
+    "6": [
+        "job-16a.hg",
+        56,
+        8
+    ],
+    "7": [
+        "job-17a.hg",
+        48,
+        7
+    ],
+    "8": [
+        "job-18a.hg",
+        44,
+        7
+    ],
+    "9": [
+        "job-19a.hg",
+        66,
+        10
+    ],
+    "10": [
+        "job-1a.hg",
+        28,
+        5
+    ],
+    "11": [
+        "job-20a.hg",
+        53,
+        10
+    ],
+    "12": [
+        "job-21a.hg",
+        45,
+        9
+    ],
+    "13": [
+        "job-22a.hg",
+        50,
+        11
+    ],
+    "14": [
+        "job-23a.hg",
+        49,
+        11
+    ],
+    "15": [
+        "job-24a.hg",
+        72,
+        12
+    ],
+    "16": [
+        "job-25a.hg",
+        50,
+        9
+    ],
+    "17": [
+        "job-26a.hg",
+        60,
+        12
+    ],
+    "18": [
+        "job-27a.hg",
+        53,
+        12
+    ],
+    "19": [
+        "job-28a.hg",
+        58,
+        14
+    ],
+    "20": [
+        "job-29a.hg",
+        87,
+        17
+    ],
+    "21": [
+        "job-2a.hg",
+        32,
+        5
+    ],
+    "22": [
+        "job-30a.hg",
+        58,
+        12
+    ],
+    "23": [
+        "job-31a.hg",
+        62,
+        11
+    ],
+    "24": [
+        "job-32a.hg",
+        38,
+        6
+    ],
+    "25": [
+        "job-33a.hg",
+        74,
+        14
+    ],
+    "26": [
+        "job-3a.hg",
+        25,
+        4
+    ],
+    "27": [
+        "job-4a.hg",
+        27,
+        5
+    ],
+    "28": [
+        "job-5a.hg",
+        28,
+        5
+    ],
+    "29": [
+        "job-6a.hg",
+        36,
+        5
+    ],
+    "30": [
+        "job-7a.hg",
+        51,
+        8
+    ],
+    "31": [
+        "job-8a.hg",
+        52,
+        7
+    ],
+    "32": [
+        "job-9a.hg",
+        59,
+        8
+    ],
+    "33": [
+        "tpch-manual-q1.hg",
+        39,
+        5
+    ],
+    "34": [
+        "tpch-manual-q10.hg",
+        23,
+        3
+    ],
+    "35": [
+        "tpch-manual-q11.hg",
+        23,
+        3
+    ],
+    "36": [
+        "tpch-manual-q12.hg",
+        27,
+        4
+    ],
+    "37": [
+        "tpch-manual-q13.hg",
+        55,
+        6
+    ],
+    "38": [
+        "tpch-manual-q2.hg",
+        32,
+        4
+    ],
+    "39": [
+        "tpch-manual-q3.hg",
+        38,
+        4
+    ],
+    "40": [
+        "tpch-manual-q4.hg",
+        28,
+        3
+    ],
+    "41": [
+        "tpch-manual-q5.hg",
+        55,
+        6
+    ],
+    "42": [
+        "tpch-manual-q6.hg",
+        36,
+        3
+    ],
+    "43": [
+        "tpch-manual-q7.hg",
+        35,
+        3
+    ],
+    "44": [
+        "tpch-manual-q8.hg",
+        35,
+        3
+    ],
+    "45": [
+        "tpch-manual-q9.hg",
+        35,
+        3
+    ],
+    "46": [
+        "tpch-synthetic-q1.hg",
+        44,
+        4
+    ],
+    "47": [
+        "tpch-synthetic-q10.hg",
+        39,
+        4
+    ],
+    "48": [
+        "tpch-synthetic-q11.hg",
+        39,
+        4
+    ],
+    "49": [
+        "tpch-synthetic-q12.hg",
+        51,
+        5
+    ],
+    "50": [
+        "tpch-synthetic-q13.hg",
+        51,
+        5
+    ],
+    "51": [
+        "tpch-synthetic-q14.hg",
+        46,
+        5
+    ],
+    "52": [
+        "tpch-synthetic-q15.hg",
+        48,
+        5
+    ],
+    "53": [
+        "tpch-synthetic-q16.hg",
+        48,
+        5
+    ],
+    "54": [
+        "tpch-synthetic-q17.hg",
+        46,
+        5
+    ],
+    "55": [
+        "tpch-synthetic-q18.hg",
+        52,
+        5
+    ],
+    "56": [
+        "tpch-synthetic-q19.hg",
+        49,
+        5
+    ],
+    "57": [
+        "tpch-synthetic-q2.hg",
+        39,
+        4
+    ],
+    "58": [
+        "tpch-synthetic-q20.hg",
+        52,
+        5
+    ],
+    "59": [
+        "tpch-synthetic-q3.hg",
+        41,
+        4
+    ],
+    "60": [
+        "tpch-synthetic-q4.hg",
+        39,
+        4
+    ],
+    "61": [
+        "tpch-synthetic-q5.hg",
+        39,
+        4
+    ],
+    "62": [
+        "tpch-synthetic-q6.hg",
+        44,
+        4
+    ],
+    "63": [
+        "tpch-synthetic-q7.hg",
+        40,
+        4
+    ],
+    "64": [
+        "tpch-synthetic-q8.hg",
+        34,
+        4
+    ],
+    "65": [
+        "tpch-synthetic-q9.hg",
+        44,
+        4
+    ],
+    "66": [
+        "grid2d_10.hg",
+        101,
+        50
+    ],
+    "67": [
+        "grid2d_15.hg",
+        226,
+        112
+    ],
+    "68": [
+        "grid3d_5.hg",
+        126,
+        62
+    ],
+    "69": [
+        "grid4d_3.hg",
+        82,
+        40
+    ],
+    "70": [
+        "grid5.hg",
+        66,
+        40
+    ],
+    "71": [
+        "adder_15.hg",
+        183,
+        76
+    ],
+    "72": [
+        "adder_25.hg",
+        303,
+        126
+    ],
+    "73": [
+        "dubois-015.xml.hg",
+        76,
+        30
+    ],
+    "74": [
+        "dubois-016.xml.hg",
+        81,
+        32
+    ],
+    "75": [
+        "dubois-017.xml.hg",
+        86,
+        34
+    ],
+    "76": [
+        "dubois-018.xml.hg",
+        91,
+        36
+    ],
+    "77": [
+        "dubois-019.xml.hg",
+        96,
+        38
+    ],
+    "78": [
+        "dubois-020.xml.hg",
+        101,
+        40
+    ],
+    "79": [
+        "dubois-021.xml.hg",
+        106,
+        42
+    ],
+    "80": [
+        "dubois-022.xml.hg",
+        111,
+        44
+    ],
+    "81": [
+        "dubois-023.xml.hg",
+        116,
+        46
+    ],
+    "82": [
+        "dubois-024.xml.hg",
+        121,
+        48
+    ],
+    "83": [
+        "dubois-025.xml.hg",
+        126,
+        50
+    ],
+    "84": [
+        "dubois-026.xml.hg",
+        131,
+        52
+    ],
+    "85": [
+        "dubois-027.xml.hg",
+        136,
+        54
+    ],
+    "86": [
+        "dubois-028.xml.hg",
+        141,
+        56
+    ],
+    "87": [
+        "dubois-029.xml.hg",
+        146,
+        58
+    ],
+    "88": [
+        "dubois-030.xml.hg",
+        151,
+        60
+    ],
+    "89": [
+        "dubois-035.xml.hg",
+        176,
+        70
+    ],
+    "90": [
+        "dubois-040.xml.hg",
+        201,
+        80
+    ],
+    "91": [
+        "dubois-045.xml.hg",
+        226,
+        90
+    ],
+    "92": [
+        "dubois-050.xml.hg",
+        251,
+        100
+    ],
+    "93": [
+        "dubois20.hg",
+        221,
+        160
+    ],
+    "94": [
+        "dubois21.hg",
+        232,
+        168
+    ],
+    "95": [
+        "dubois23.hg",
+        254,
+        184
+    ],
+    "96": [
+        "dubois25.hg",
+        276,
+        200
+    ],
+    "97": [
+        "dubois27.hg",
+        298,
+        216
+    ],
+    "98": [
+        "dubois28.hg",
+        309,
+        224
+    ],
+    "99": [
+        "dubois29.hg",
+        320,
+        232
+    ],
+    "100": [
+        "dubois30.hg",
+        331,
+        240
+    ],
+    "101": [
+        "pret-060-25.xml.hg",
+        101,
+        40
+    ],
+    "102": [
+        "pret-060-40.xml.hg",
+        101,
+        40
+    ],
+    "103": [
+        "pret-060-60.xml.hg",
+        101,
+        40
+    ],
+    "104": [
+        "pret-060-75.xml.hg",
+        101,
+        40
+    ],
+    "105": [
+        "pret-150-25.xml.hg",
+        251,
+        100
+    ],
+    "106": [
+        "pret-150-40.xml.hg",
+        251,
+        100
+    ],
+    "107": [
+        "pret-150-60.xml.hg",
+        251,
+        100
+    ],
+    "108": [
+        "pret-150-75.xml.hg",
+        251,
+        100
+    ],
+    "109": [
+        "pret60_25.hg",
+        221,
+        160
+    ],
+    "110": [
+        "pret60_60.hg",
+        221,
+        160
+    ],
+    "111": [
+        "nonogram-024-table.xml.hg",
+        1089,
+        64
+    ],
+    "112": [
+        "nonogram-020-table.xml.hg",
+        1089,
+        64
+    ],
+    "113": [
+        "grid2d_50.hg",
+        2501,
+        1250
+    ],
+    "114": [
+        "nonogram-089-table.xml.hg",
+        441,
+        40
+    ],
+    "115": [
+        "nonogram-094-table.xml.hg",
+        625,
+        48
+    ],
+    "116": [
+        "nonogram-137-table.xml.hg",
+        1089,
+        64
+    ],
+    "117": [
+        "nonogram-099-table.xml.hg",
+        625,
+        48
+    ],
+    "118": [
+        "nonogram-070-table.xml.hg",
+        625,
+        48
+    ],
+    "119": [
+        "nonogram-108-table.xml.hg",
+        1089,
+        64
+    ],
+    "120": [
+        "nonogram-035-table.xml.hg",
+        625,
+        48
+    ],
+    "121": [
+        "s526.hg",
+        432,
+        214
+    ],
+    "122": [
+        "grid2d_75.hg",
+        5626,
+        2812
+    ],
+    "123": [
+        "nonogram-002-table.xml.hg",
+        1089,
+        64
+    ],
+    "124": [
+        "nonogram-104-table.xml.hg",
+        441,
+        40
+    ],
+    "125": [
+        "nonogram-177-table.xml.hg",
+        1089,
+        64
+    ],
+    "126": [
+        "nonogram-166-table.xml.hg",
+        625,
+        48
+    ],
+    "127": [
+        "nonogram-165-table.xml.hg",
+        625,
+        48
+    ],
+    "128": [
+        "s510.hg",
+        454,
+        217
+    ],
+    "129": [
+        "s1196.hg",
+        1109,
+        547
+    ],
+    "130": [
+        "nonogram-169-table.xml.hg",
+        625,
+        48
+    ],
+    "131": [
+        "nonogram-077-table.xml.hg",
+        1089,
+        64
+    ],
+    "132": [
+        "nonogram-142-table.xml.hg",
+        625,
+        48
+    ],
+    "133": [
+        "grid2d_45.hg",
+        2026,
+        1012
+    ],
+    "134": [
+        "grid2d_35.hg",
+        1226,
+        612
+    ],
+    "135": [
+        "nonogram-119-table.xml.hg",
+        1089,
+        64
+    ],
+    "136": [
+        "newsystem2.hg",
+        546,
+        200
+    ],
+    "137": [
+        "newsystem4.hg",
+        1137,
+        418
+    ],
+    "138": [
+        "nonogram-047-table.xml.hg",
+        441,
+        40
+    ],
+    "139": [
+        "nonogram-006-table.xml.hg",
+        625,
+        48
+    ],
+    "140": [
+        "grid2d_30.hg",
+        901,
+        450
+    ],
+    "141": [
+        "nonogram-014-table.xml.hg",
+        625,
+        48
+    ],
+    "142": [
+        "nonogram-073-table.xml.hg",
+        441,
+        40
+    ],
+    "143": [
+        "nonogram-168-table.xml.hg",
+        441,
+        40
+    ],
+    "144": [
+        "nonogram-040-table.xml.hg",
+        693,
+        52
+    ],
+    "145": [
+        "nonogram-048-table.xml.hg",
+        441,
+        40
+    ],
+    "146": [
+        "nonogram-172-table.xml.hg",
+        441,
+        40
+    ],
+    "147": [
+        "nonogram-115-table.xml.hg",
+        441,
+        40
+    ],
+    "148": [
+        "nonogram-005-table.xml.hg",
+        625,
+        48
+    ],
+    "149": [
+        "nonogram-072-table.xml.hg",
+        625,
+        48
+    ],
+    "150": [
+        "nonogram-078-table.xml.hg",
+        625,
+        48
+    ],
+    "151": [
+        "nonogram-029-table.xml.hg",
+        625,
+        48
+    ],
+    "152": [
+        "s641.hg",
+        832,
+        398
+    ],
+    "153": [
+        "hole9.hg",
+        506,
+        415
+    ],
+    "154": [
+        "nonogram-114-table.xml.hg",
+        625,
+        48
+    ],
+    "155": [
+        "nonogram-150-table.xml.hg",
+        625,
+        48
+    ],
+    "156": [
+        "nonogram-028-table.xml.hg",
+        1089,
+        64
+    ],
+    "157": [
+        "nonogram-117-table.xml.hg",
+        441,
+        40
+    ],
+    "158": [
+        "nonogram-107-table.xml.hg",
+        1089,
+        64
+    ],
+    "159": [
+        "nonogram-017-table.xml.hg",
+        441,
+        40
+    ],
+    "160": [
+        "nonogram-008-table.xml.hg",
+        625,
+        48
+    ],
+    "161": [
+        "nonogram-057-table.xml.hg",
+        625,
+        48
+    ],
+    "162": [
+        "nonogram-132-table.xml.hg",
+        441,
+        40
+    ],
+    "163": [
+        "nonogram-124-table.xml.hg",
+        625,
+        48
+    ],
+    "164": [
+        "adder_75.hg",
+        903,
+        376
+    ],
+    "165": [
+        "2bitcomp_5.hg",
+        406,
+        310
+    ],
+    "166": [
+        "nonogram-178-table.xml.hg",
+        825,
+        56
+    ],
+    "167": [
+        "nonogram-147-table.xml.hg",
+        441,
+        40
+    ],
+    "168": [
+        "nonogram-022-table.xml.hg",
+        1089,
+        64
+    ],
+    "169": [
+        "nonogram-163-table.xml.hg",
+        1089,
+        64
+    ],
+    "170": [
+        "nonogram-074-table.xml.hg",
+        425,
+        40
+    ],
+    "171": [
+        "nonogram-011-table.xml.hg",
+        625,
+        48
+    ],
+    "172": [
+        "newsystem3.hg",
+        753,
+        278
+    ],
+    "173": [
+        "nonogram-004-table.xml.hg",
+        625,
+        48
+    ],
+    "174": [
+        "nonogram-125-table.xml.hg",
+        1089,
+        64
+    ],
+    "175": [
+        "s953.hg",
+        865,
+        424
+    ],
+    "176": [
+        "nonogram-085-table.xml.hg",
+        625,
+        48
+    ],
+    "177": [
+        "nonogram-058-table.xml.hg",
+        1089,
+        64
+    ],
+    "178": [
+        "nonogram-038-table.xml.hg",
+        1044,
+        63
+    ],
+    "179": [
+        "s420.hg",
+        444,
+        212
+    ],
+    "180": [
+        "nonogram-092-table.xml.hg",
+        1089,
+        64
+    ],
+    "181": [
+        "grid2d_60.hg",
+        3601,
+        1800
+    ],
+    "182": [
+        "nonogram-007-table.xml.hg",
+        1122,
+        65
+    ],
+    "183": [
+        "s1238.hg",
+        1067,
+        526
+    ],
+    "184": [
+        "nonogram-034-table.xml.hg",
+        625,
+        48
+    ],
+    "185": [
+        "s1423.hg",
+        1480,
+        731
+    ]
+}
