@@ -8,95 +8,56 @@ from fractionalCover import *
 
 
 def makeBalancedSeparatorHypergraphNormalLP(H, gamma):
+    # γ (gamma): function mapping the set of edges E to binary weight, 
+    # defined in other parts of the code
     sum_gamma = sum(gamma[e] for e in H.E)
 
-    # Important edges: F = all edges e in eset with gamma[e] > 0
-    F = {e for e in H.E if gamma[e] > 0} 
-    
+
+    # F = all edges e in eset with gamma[e] > 0
+    F = {e for e in H.E if gamma[e] > 0}
     model = Model('bi_project')
-    
+   
     # x[v]: Binary, 1 if vertex v is in the separator S
     # y[e]: Continuous [0,1], 1 if edge e is covered by the separator
     x = model.binary_var_dict(H.V, name='vertex_in_sep')
     y = model.continuous_var_dict(H.E, lb=0, ub=1, name='edge_covered')
-    
     # d[f, v]: Distance from source edge e to vertex v
-    # d[f, e]: Distance from source edge e to edge e
+    # d[f, e’]: Distance from source edge e to edge e
     d_ev = model.continuous_var_dict([(f, v) for f in F for v in H.V], lb=0, ub=1, name='Dist_f_v')
     d_ee = model.continuous_var_dict([(f, ePrime) for f in F for ePrime in F], lb=0, ub=1, name='Dist_f_e')
-    
     # Model
     # Minimize fractional width (sum of y)
     model.minimize(model.sum(y[e] for e in H.E))
-    
-    # 1 Cover Constraint
-    # FIX: Used plural 'add_constraints' correctly for generator
     model.add_constraints(x[v] <= model.sum(y[e] for e in H.edgesOf[v]) for v in H.V)
-    
-    # FIX: Ensure 'coveredVertices' and 'inducedSubhypergraph' are available. 
-    # If they are from the original 'hypergraph.py', ensure 'H' has these methods.
     Z = coveredVertices(H, gamma)
     
-    # FIX: 
-    # 1. Used 'model.add_constraint' instead of 'prob +=' (PuLP syntax).
-    # 2. Used 'model.sum' instead of 'pulp.lpSum'.
-    # 3. Used 'x' (lowercase) instead of 'X' (undefined).
-    if len(H.inducedSubhypergraph(H.V - Z).connectedComponents()) == 1 and all(len(H.adj[v] - Z) > 0 for v in Z):
+    # Make Gaifman Graph
+    G = H.gaifmanGraph()
+
+    if len(H.inducedSubhypergraph(H.V - Z).connectedComponents()) == 1 and all(len(H.G[v] - Z) > 0 for v in Z):
         model.add_constraint(model.sum(x[v] for v in H.V - Z) >= 1)
-    
-    # 2 Distance Constraints
-    # FIX: H.gaifmanGraph() usually returns an adjacency dict {v: {neighbors}}.
-    G = H.gaifmanGraph() 
-    
+
+    # 3 Distance Constraints
     for f in F:    
-        # FIX: 'add_constraints' (plural) because you are passing a generator (for v in ...)
-        model.add_constraints(d_ev[(f,v)] <= x[v] for v in H.verticesOf[f])
-        
-        # FIX: Typo 'add_conatraint' -> 'add_constraints'
-        # Note: This is redundant if variable ub=1, but syntactically correct now.
-        model.add_constraints(d_ev[(f,v)] <= 1 for v in H.verticesOf[f]) 
-        
-        # FIX: Triangle Inequality Logic
-        # 1. 'u' is a vertex, so you cannot use d_ee[(f,u)]. Changed to d_ev[(f,u)].
-        # 2. Iterating 'for v in G for u in G' creates O(|V|^2) constraints (all pairs).
-        #    You likely meant neighbors: 'for u in G[v]'.
-        #    I kept your loop structure but fixed the indexing error.
+        model.add_constraints(d_ev[(f,v)] <= x[v] for v in H.verticesOf[f])  #A
         for v in H.V:
-            # Assuming G is an adjacency dict {v: set(neighbors)}
-            model.add_constraints(d_ev[(f,v)] <= d_ev[(f,u)] + x[v] for u in G[v])
-            
-        # FIX: ePrime loop
-        model.add_constraints(d_ee[(f, ePrime)] <= d_ev[(f,v)] for ePrime in F for v in H.verticesOf[ePrime])
-    
-    # 3 Balance Constraint
-    # FIX: The original constraint applies PER source edge 'f'.
-    # Your code tried to sum over 'f' inside the constraint, making one giant constraint.
-    # I moved the 'for f in F' loop outside.
+            model.add_constraints(d_ev[(f,v)] <= d_ev[(f,u)] + x[v] for u in G[v])#B
+        model.add_constraints(d_ee[(f, ePrime)] <= d_ev[(f,v)] for ePrime in F for v in H.verticesOf[ePrime]) #C
+
     for f in F:
         model.add_constraint(
-            model.sum(gamma[ePrime] * d_ee[(f,ePrime)] for ePrime in F) >= (sum_gamma / 2.0) - settings.epsilon
-        )
-    
-    model.print_information()
-    #sol = model.solve(log_output=True)
-    
-    # FIX: Access solve details from the solution object or model, ensuring safe access
-    #if sol:
-        #print("Solution found")
-        # print(sol.get_objective_value())
-    #else:
-        #print("No solution")
+            model.sum(gamma[ePrime] * d_ee[(f,ePrime)] for ePrime in F) >= (sum_gamma / 2.0) - settings.epsilon)
         
-    #return model
-    sol = model.solve(log_output=False) # Turn off log to keep terminal clean
-    
+    model.print_information()
+    sol = model.solve(log_output=False) 
+   
     if sol:
         # Extract the separator: vertices where x[v] is roughly 1
         separator_vertices = set()
         for v in H.V:
-            if x[v].solution_value > 0.9: # If x is 1.0 (binary)
+            if x[v].solution_value == 1: # If x is 1.0 (binary)
                 separator_vertices.add(v)
-        
+       
         # Return the separator set and the width (objective value)
         return separator_vertices, model.objective_value
     else:
