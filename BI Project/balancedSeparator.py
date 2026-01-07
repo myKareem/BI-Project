@@ -37,68 +37,38 @@ def makeBalancedSeparatorHypergraphNormalLP(H, gamma):
     model.minimize(model.sum(y[e] for e in H.E))
     
     # 1 Cover Constraint
-    # FIX: Used plural 'add_constraints' correctly for generator
     model.add_constraints(x[v] <= model.sum(y[e] for e in H.edgesOf[v]) for v in H.V)
     
-    # FIX: Ensure 'coveredVertices' and 'inducedSubhypergraph' are available. 
-    # If they are from the original 'hypergraph.py', ensure 'H' has these methods.
     Z = coveredVertices(H, gamma)
-    
-    # FIX: 
-    # 1. Used 'model.add_constraint' instead of 'prob +=' (PuLP syntax).
-    # 2. Used 'model.sum' instead of 'pulp.lpSum'.
-    # 3. Used 'x' (lowercase) instead of 'X' (undefined).
+ 
     if len(H.inducedSubhypergraph(H.V - Z).connectedComponents()) == 1 and all(len(H.G[v] - Z) > 0 for v in Z):
         model.add_constraint(model.sum(x[v] for v in H.V - Z) >= 1)
     
     # 2 Distance Constraints
-    # FIX: H.gaifmanGraph() usually returns an adjacency dict {v: {neighbors}}.
     G = H.gaifmanGraph() 
     
     for f in F:    
-        # FIX: 'add_constraints' (plural) because you are passing a generator (for v in ...)
         model.add_constraints(d_ev[(f,v)] <= x[v] for v in H.verticesOf[f])
         
-        # FIX: Typo 'add_conatraint' -> 'add_constraints'
-        # Note: This is redundant if variable ub=1, but syntactically correct now.
         model.add_constraints(d_ev[(f,v)] <= 1 for v in H.verticesOf[f]) 
         
-        # FIX: Triangle Inequality Logic
-        # 1. 'u' is a vertex, so you cannot use d_ee[(f,u)]. Changed to d_ev[(f,u)].
-        # 2. Iterating 'for v in G for u in G' creates O(|V|^2) constraints (all pairs).
-        #    You likely meant neighbors: 'for u in G[v]'.
-        #    I kept your loop structure but fixed the indexing error.
+        
         for v in H.V:
-            # Assuming G is an adjacency dict {v: set(neighbors)}
             model.add_constraints(d_ev[(f,v)] <= d_ev[(f,u)] + x[v] for u in G[v])
             
-        # FIX: ePrime loop
         model.add_constraints(d_ee[(f, ePrime)] <= d_ev[(f,v)] for ePrime in F for v in H.verticesOf[ePrime])
     
     # 3 Balance Constraint
-    # FIX: The original constraint applies PER source edge 'f'.
-    # Your code tried to sum over 'f' inside the constraint, making one giant constraint.
-    # I moved the 'for f in F' loop outside.
     for f in F:
         model.add_constraint(
             model.sum(gamma[ePrime] * d_ee[(f,ePrime)] for ePrime in F) >= (sum_gamma / 2.0) - settings.epsilon
         )
     
     model.print_information()
-    #sol = model.solve(log_output=True)
     
-    # FIX: Access solve details from the solution object or model, ensuring safe access
-    #if sol:
-        #print("Solution found")
-        # print(sol.get_objective_value())
-    #else:
-        #print("No solution")
-        
-    #return model
-    sol = model.solve(log_output=False) # Turn off log to keep terminal clean
+    sol = model.solve(log_output=False) 
     
     if sol:
-        # Extract the separator: vertices where x[v] is roughly 1
         separator_vertices = set()
         for v in H.V:
             if x[v].solution_value > 0.9: # If x is 1.0 (binary)
@@ -418,4 +388,5 @@ def reduceBalSepWrtRootBag(H, S, root, gamma):
     if len(newS - root) == 0 and len(S - root) > 0: newS.add(random.choice(list(S-root)))
 
     #if fractionalCover(H, root | newS)[0] < fractionalCover(H, root | S)[0]: print("REDUCED!")
+
     return newS    
